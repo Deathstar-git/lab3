@@ -1,11 +1,11 @@
 def main():
-    name = ('George', 'Jack', 'Mary')
+    name = ('Yen', 'Jack', 'Mary')
     age = (10, 23, 17)
     height = (165, 157, 178)
     a = [name, age, height]
-    print(sorted(a[1]))
+    sorted(a)
     for i in range(len(a)):
-        print("Name=" + a[1][i] + "Age=" + a[2][i] + "Height=" + a[3][i])
+        print("Name:" + str(a[0][i]) + " Age:" + str(a[1][i]) + " Height:" + str(a[2][i]))
 
 
 main()
