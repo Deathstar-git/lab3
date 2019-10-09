@@ -1,20 +1,17 @@
-def main():
-    i = input("Введите кол-во людей: ")
-    try:
-        int(i)
-    except ValueError:
-        print("Введено неверное значение!")
 
-    if i.isdigit:
-        name = ['Yen', 'Jack', 'Mary']
-        name.sort()
-        age = [10, 23, 17]
-        age.sort()
-        height = [165, 196, 180]
-        height.sort()
-        a = [name, age, height]
-        for i in range(len(a)):
-            print("Name: " + str(a[0][i]) + " Age: " + str(a[1][i]) + " Height: " + str(a[2][i]))
+def main():
+    height_true = True
+    age_true = True
+    name_true = True
+    name = ('Misha', 'Petya', 'Natasha', 'Vanya', 'Darya', 'Lena', 'Fedya', 'Zina', 'Alesha', 'Vlad')
+    name = sorted(name, reverse=name_true)
+    height = (178.2, 167.5, 183.6, 172.0, 159.1, 164.7, 170.5, 175.3, 189.2, 196.0)
+    height = sorted(height, reverse=height_true)
+    age = (17, 18, 20, 17, 17, 19, 18, 19, 20, 19)
+    age = sorted(age, reverse=age_true)
+    a = [name, height, age]
+    for i in range(len(name)):
+        print("Name: " + str(a[0][i]) + ", Height: " + str(a[1][i]) + ", Age: " + str(a[2][i]))
 
 
 main()
