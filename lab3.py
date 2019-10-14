@@ -13,6 +13,7 @@ def main():
     for j in range(len(lst)):
         sum_r = sum_r + float(lst[j][1])
         sr = sum_r/(len(lst))
+    sr = float('{:.2f}'.format(sr))
     print('Cредний рост:' + str(sr))
     sum_v = 0
     sv = 0
