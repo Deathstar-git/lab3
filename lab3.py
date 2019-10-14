@@ -1,13 +1,22 @@
-def main():
-    print("0 - сортировка по имени")
-    print("1 - сортировка по росту")
-    print("2 - сортировка по возрасту")
-    i = int(input("Введите приоритет сортировки:"))
+import argparse
+
+
+def create_parser():
+    p = argparse.ArgumentParser()
+    p.add_argument('i', type=int)
+
+    return p
+
+
+def main(i):
+    choose_sort = {0: 'Сортировка по имени:', 1: 'Сортировка по росту:', 2: 'Сортировка по возрасту:'}
+    print(str(choose_sort[i]))
     lst = [('Vanya', 172.5, 17), ('Petya', 186.0, 20), ('Anya', 168.3, 16),
            ('Masha', 178.7, 19), ('Oleg', 168.3, 17), ('Kolya', 180.4, 18), ('Natasha', 175.0, 20),
            ('Boris', 159.8, 16), ('Galina', 157.3, 18), ('Maks', 177.0, 19)]
     lst = sorted(lst, key=lambda tpl: tpl[i])
-    print(lst)
+    for j in range(len(lst)):
+        print(lst[j])
     sum_r = 0
     sr = 0
     for j in range(len(lst)):
@@ -31,4 +40,7 @@ def main():
     print('Медианный рост равен:' + str(mr))
 
 
-main()
+if __name__ == '__main__':
+    parser = create_parser()
+    namespace = parser.parse_args()
+    main(namespace.i)
