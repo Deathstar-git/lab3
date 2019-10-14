@@ -1,17 +1,33 @@
-
 def main():
-    height_true = True
-    age_true = True
-    name_true = True
-    name = ('Misha', 'Petya', 'Natasha', 'Vanya', 'Darya', 'Lena', 'Fedya', 'Zina', 'Alesha', 'Vlad')
-    name = sorted(name, reverse=name_true)
-    height = (178.2, 167.5, 183.6, 172.0, 159.1, 164.7, 170.5, 175.3, 189.2, 196.0)
-    height = sorted(height, reverse=height_true)
-    age = (17, 18, 20, 17, 17, 19, 18, 19, 20, 19)
-    age = sorted(age, reverse=age_true)
-    a = [name, height, age]
-    for i in range(len(name)):
-        print("Name: " + str(a[0][i]) + ", Height: " + str(a[1][i]) + ", Age: " + str(a[2][i]))
+    print("0 - сортировка по имени")
+    print("1 - сортировка по росту")
+    print("2 - сортировка по возрасту")
+    i = int(input("Введите приоритет сортировки:"))
+    lst = [('Vanya', 172.5, 17), ('Petya', 186.0, 20), ('Anya', 168.3, 16),
+           ('Masha', 178.7, 19), ('Oleg', 168.3, 17), ('Kolya', 180.4, 18), ('Natasha', 175.0, 20),
+           ('Boris', 159.8, 16), ('Galina', 157.3, 18), ('Maks', 177.0, 19)]
+    lst = sorted(lst, key=lambda tpl: tpl[i])
+    print(lst)
+    sum_r = 0
+    sr = 0
+    for j in range(len(lst)):
+        sum_r = sum_r + float(lst[j][1])
+        sr = sum_r/(len(lst))
+    print('Cредний рост:' + str(sr))
+    sum_v = 0
+    sv = 0
+    for j in range(len(lst)):
+        sum_v = sum_v + int(lst[j][2])
+        sv = sum_v/(len(lst))
+    print('Cредний возраст:' + str(sv))
+
+    lst_srt_v = sorted(lst, key=lambda tpl: tpl[2])
+    mv = lst_srt_v[int(len(lst)/2)][2]
+    print('Медианный возраст равен:' + str(mv))
+
+    lst_srt_r = sorted(lst, key=lambda tpl: tpl[1])
+    mr = lst_srt_r[int(len(lst)/2)][1]
+    print('Медианный рост равен:' + str(mr))
 
 
 main()
